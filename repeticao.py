@@ -20,5 +20,13 @@ print("-" * 50)
 
 
 #EXEMPLO 3
-for contador in range (0,21,2):
+for contador in range(0,21,2):
+    print(contador, end=", ")
+
+print("\n")
+print("-" * 50)
+
+
+#EXEMPLO 4
+for contador in range(10,501,10):
     print(contador, end=", ")
