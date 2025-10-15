@@ -10,6 +10,6 @@ while True:
 
 
     if numero == 0:
-        print("Sair")0
+        print("Sair")
 
         break

@@ -10,8 +10,3 @@ while valor <= 20:
 
 print("-" * 60)
 
-
-
-
-
- 
