@@ -25,11 +25,35 @@ print(valores2)
 
 
 # EXECICIO
-
+'''
 while True:
     numero = int(input("Vc quer apagar um item da lista? \n1 - sim \n2 - para encerrar\n\nDigite uma opção: "))
 
     if   numero == 2:
+        break  # encerra o sistema
+    elif numero == 1:
+        valores2.pop()
+    
+    print(valores2)
+
+
+print("\nPrograma encerrado\n")
+
+print(valores2)
+'''
+
+# EXECICIO
+
+while True:
+    numero = int(input("Vc quer apagar um item da lista? \n1 - sim \n2 - para encerrar\n\nDigite uma opção: "))
+
+
+    #len() irá verificar o tamanho da lista.
+    if len(valores2) <= 0:
+        print("Lista vazia")
+        break
+
+    elif numero == 2:
         break  # encerra o sistema
     elif numero == 1:
         valores2.pop()
