@@ -16,7 +16,7 @@ while  entrada_saida == True:
 
     except Exception as erro:  
 
-        print(f"\n\nATENÇÃO!!!\n\nMESSAGEM DO SEU DEV JÙNIOR:\nCoisa feia, tentando colocar texto no locar de numero.\n\nO erro foi: {erro}\n\n")
+        print(f"\n\nATENÇÃO!!!\n\nMESSAGEM DO SEU DEV JÙNIOR:\nCoisa feia, tentando colocar texto no lugar de numero.\n\nO erro foi: {erro}\n\n")
 
 
     if  opcao == 1:   # Adicionar livro
