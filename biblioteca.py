@@ -1,7 +1,7 @@
 bibloteca = {}
 
-entrada_saida = True
-while  entrada_saida == True:
+
+def menu(opcao):    # Função Menu
 
     print("\n=== MINHA BIBLIOTECA PESSOAL ===")
 
@@ -9,25 +9,29 @@ while  entrada_saida == True:
     print("\n1. Adicionar livro\n2. Consultar livro\n3. Atualizar páginas\n4. Remover livro\n5. Listar todos os livros\n6. Contar livros\n7. Sair\n")
     print("-" * 32)
 
-    opcao = 0
-
+    
     try:   
         opcao = int(input("|> Digite uma opção: "))
+
+        return opcao
 
     except Exception as erro:  
 
         print(f"\n\nATENÇÃO!!!\n\nMESSAGEM DO SEU DEV JÙNIOR:\nCoisa feia, tentando colocar texto no lugar de numero.\n\nO erro foi: {erro}\n\n")
 
 
-    if  opcao == 1:   # Adicionar livro
-                       
-        nome = input("\n|> Digite o nome do livro: ")         
-        bibloteca[nome] = int(input(f"\n|> Digite o número de páginas do '{nome}': "))
 
-        print("\n  #  Livro adicionado com sucesso!  \n")
+def adicionar():   # Função Adicionar livro
+
+    nome = input("\n|> Digite o nome do livro: ")        
+
+    bibloteca[nome] = int(input(f"\n|> Digite o número de páginas do '{nome}': "))
+
+    print("\n  #  Livro adicionado com sucesso!  \n")
 
 
-    elif opcao == 2:   # Consultar livro
+
+def consultar():   # Função Consultar livro
 
         print("\n\n=== CONSULTAR LIVROS ===\n")
         nome = input("\n|> Digite o nome do livro: ")         
@@ -44,7 +48,9 @@ while  entrada_saida == True:
             print("\n  #  O nome do livro não existe.")
 
 
-    elif opcao == 3:   # Atualizar páginas
+
+def atualizar():   # Função Atualizar páginas
+
         print("\n\n=== ATUALIZAÇÃO DE LIVROS ===\n")
         nome = input("\n|> Digite o nome do livro: ")         
 
@@ -56,8 +62,10 @@ while  entrada_saida == True:
             print("\n  #  O nome do livro não existe.")
   
 
-    elif opcao == 4:   # Remover livro
-        
+
+
+def remover():    # Fução Remover livro
+
         print("\n\n===  REMOVER LIVROS ===\n")
         nome = input("\n|> Digite o nome do livro para remoção: ")     
 
@@ -69,20 +77,73 @@ while  entrada_saida == True:
            print("\n  #  O nome do livro não existe.")
 
 
-    elif opcao == 5:   # Listar todos os livros
+
+def listar():     # Função Listar todos os livros
+
         print("\n\n=== LIVROS NA BIBLIOTECA ===\n\n")
 
         for chave, valores in bibloteca.items(): 
             print(f"- {chave}: {valores} páginas\n")
 
-  
-    elif opcao == 6:   # Contar livros
+
+
+def contar():     # Função Contar livros
+         
         print("\n\n=== QUANTEDADE DE LIVROS  ===\n")
 
         quantidade = len(bibloteca)        
         print(f"  #  A quantidade de livros existentes na biblioteca é {quantidade}!\n")
 
 
-    elif opcao == 7:   # Sair
+
+def sair(entrada_saida):  # Função Sair
+     
         print("\n  #  Obrigado por visitar a nossa biblioteca, até mais tarde!\n\n")
-        break
+        
+        return  False
+        
+
+
+entrada_saida = True
+while  entrada_saida == True:
+
+    opcao = 0
+    
+    opcao = menu(opcao)
+
+
+    if  opcao == 1:    # Adicionar livro
+                       
+        adicionar()
+
+
+    elif opcao == 2:   # Consultar livro
+       
+        consultar()
+
+
+    elif opcao == 3:   # Atualizar páginas
+
+        atualizar()
+
+
+    elif opcao == 4:   # Remover livro
+        
+        remover()
+
+       
+    elif opcao == 5:   # Listar todos os livros
+      
+        listar()
+         
+
+    elif opcao == 6:   # Contar livros
+       
+        contar()
+
+
+    elif opcao == 7:   # Sair
+
+        entrada_saida = sair(entrada_saida)
+
+  
